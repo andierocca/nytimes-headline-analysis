@@ -1,2 +1,6 @@
 # nytimes-headline-analysis
 Project for my Communication and Culture class which analyzes how articles and the relation to their headlines have changed over time.
+
+I used the [nytimesarticle](https://pypi.python.org/pypi/nytimesarticle/0.1.0) package for scraping articles from 1980 to 2015 which uses the [NYT Article Search API](http://developer.nytimes.com/docs/read/article_search_api_v2). And then for analyzing relevance between headlines and their articles I used the [Natural Language Toolkit's](http://www.nltk.org/) part of speech classifier.
+
+To measure relevance, I stored the headline of an article with its 'lead paragraph', or its 'abstract' if the 'lead paragraph' wasn't available or its 'snippet' if the 'abstract' wasn't available. Then picked out the proper nouns and noun phrases from the headlines to find what the headline implied the topics of the article were. Then I simply counted the occurances of each topic in the article and divided that by the number of topics * some importance value of their presence.

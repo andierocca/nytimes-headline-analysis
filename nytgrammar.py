@@ -85,7 +85,10 @@ def determine_relevance(headline, abstract):
 			occurrences = count_word(abstract, t)
 			relevance += (occurrences / (len(topics) * i))
 
-	return relevance
+	if len(topics) == 0:
+		return 0
+	else:
+		return relevance / len(topics)
 
 
 

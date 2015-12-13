@@ -93,9 +93,12 @@ def determine_relevance(headline, abstract):
 
 
 def count_word(text, word):
-	occurrences = 0
 	start = 0
 	index = word_index(text, word, start)
+	if index != -1:
+		occurrences = 1
+	else:
+		return 0
 	while index != -1:
 		occurrences += 1
 		start = index + len(word)
